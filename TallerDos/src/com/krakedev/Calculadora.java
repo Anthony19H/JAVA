@@ -41,4 +41,11 @@ public class Calculadora {
 		System.out.println("Hola! " +nombre+", Tu apodo es: " +apodo);
 	}
 	
+	public double calcularDescuento(double valor1,double descuento) {
+		
+		double resultadoDescuento = valor1 -(valor1*descuento/100);
+		return resultadoDescuento;
+	}
+	
+	
 }

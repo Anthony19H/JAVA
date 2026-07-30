@@ -30,10 +30,24 @@ public class TestCalculadora {
 		System.out.println("El resultado del promedio es :" + resultadoP);
 		
 		//cuando es una funcion de tipo void no se declara variable para almacenar resultado 
-		//llammos al apuntador, seleccionamos el metodo que no retorna nada
+		//llammos al apuntador, seleccionamos el meted que no retorna nada
 		
 		c2.mostrarResultado();
 		c1.mostrarMensaje("Anthony","Polilla");
+		
+		double restultadoD = c1.calcularDescuento(100,30);
+		System.out.println("El descuento es : " + restultadoD);
+		
+		
+		Calculadora c3 = new Calculadora();
+		
+		double resultadoc3 = c3.restar(8,3);
+		System.out.println("\nEl resultado es :" + resultadoc3 );
+		
+		double resultadoc3D = c3.calcularDescuento(1000, 20);
+		System.out.println("El descuento es : " + resultadoc3D);
+		
+		
 	}
 
 }
