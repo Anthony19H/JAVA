@@ -31,7 +31,7 @@ public class TestCuenta {
 		cuenta2.imprimirConMiEstilo();
 		cuenta3.imprimirConMiEstilo();
 		
-		System.out.println("--------Valores C4, C5 ,C6 --------");
+		System.out.println("--------Valores Cuenta 4, Cuenta 5 ,Cuenta 6 --------");
 		
 		Cuenta cuenta4 = new Cuenta("0123", "A", 125);
 		
