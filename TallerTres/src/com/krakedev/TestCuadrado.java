@@ -6,13 +6,10 @@ public class TestCuadrado {
 		// TODO Auto-generated method stub
 
 		
-		Cuadrado c1 =new Cuadrado();
-		Cuadrado c2 =new Cuadrado();
-		Cuadrado c3 =new Cuadrado();
+		Cuadrado c1 =new Cuadrado(3);
+		Cuadrado c2 =new Cuadrado(5);
+		Cuadrado c3 =new Cuadrado(6);
 
-		c1.setLado(3);
-		c2.setLado(5);
-		c3.setLado(6);
 		
 		double resultadoAreaCuadrado;
 		double resultadoPerimetroCuadrado;

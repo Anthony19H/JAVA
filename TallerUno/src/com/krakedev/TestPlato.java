@@ -9,12 +9,12 @@ public class TestPlato {
         Plato platoB;
         Plato platoC;
         
-        platoA = new Plato();
-        platoB = new Plato();
-        platoC = new Plato();
+        platoA = new Plato("Ceviche de Camarón","Entrada",5.00f,true);
+        platoB = new Plato("Seco de Pollo","Plato Fuerte",5.00f,false);
+        platoC = new Plato("Tres Leches","Postre",3.50f,false);
         
         
-        System.out.println("=== VALORES POR DEFECTO ===");
+        System.out.println("=== VALORES POR CONSTRUCTOR===");
         
         System.out.println("-- Plato A --");
         System.out.println(platoA.getNombre());
@@ -34,42 +34,7 @@ public class TestPlato {
         System.out.println(platoC.getPrecio());
         System.out.println(platoC.isDisponible());
         
-        System.out.println("=== VALORES MODIFICADOS ===");
-		
         
-        platoA.setNombre("Ceviche de Camarón");
-        platoA.setTipo("Entrada");
-        platoA.setPrecio(8.50f);
-        platoA.setDisponible(true);
-        
-        platoB.setNombre("Seco de Pollo");
-        platoB.setTipo("Plato Fuerte");
-        platoB.setPrecio(5.00f);
-        platoB.setDisponible(true);
-        
-        platoC.setNombre("Tres Leches");
-        platoC.setTipo("Postre");
-        platoC.setPrecio(3.50f);
-        platoC.setDisponible(false);
-        
-        
-        System.out.println("--- PLATO A ---");
-        System.out.println("Nombre: " + platoA.getNombre());
-        System.out.println("Tipo: " + platoA.getTipo());
-        System.out.println("Precio: " + platoA.getPrecio());
-        System.out.println("Disponible: " + platoA.isDisponible());
-        
-        System.out.println("---- PLATO B ---");
-        System.out.println("Nombre: " + platoB.getNombre());
-        System.out.println("Tipo: " + platoB.getTipo());
-        System.out.println("Precio: " + platoB.getPrecio());
-        System.out.println("Disponible: " + platoB.isDisponible());
-        
-        System.out.println("---- PLATO C ---");
-        System.out.println("Nombre: " + platoC.getNombre());
-        System.out.println("Tipo: " + platoC.getTipo());
-        System.out.println("Precio: " + platoC.getPrecio());
-        System.out.println("Disponible: " + platoC.isDisponible());
 		
 	}
 

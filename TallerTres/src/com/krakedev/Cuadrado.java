@@ -5,6 +5,11 @@ public class Cuadrado {
 	
 	private int lado;
 	
+	
+	public Cuadrado(int lado) {
+		this.lado =lado;
+	}
+	
 	public double calcularArea() {
 		double resultado = lado*lado;
 		return resultado;
