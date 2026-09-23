@@ -8,6 +8,10 @@ public class Maquina {
 	private double capacidadMaxima;
 	private double cantidadActual;
 	private String codigo;
+	
+	
+	public Maquina() {
+	}
 
 	public Maquina(String nombreCerveza, String descripcion, double precioPorMl, double capacidadMaxima,
 			String codigo) {
@@ -66,6 +70,9 @@ public class Maquina {
 
 	public String getCodigo() {
 		return codigo;
+	}
+	public void setCodigo(String codigo) {
+	    this.codigo = codigo;
 	}
 
 	public void imprimir() {
