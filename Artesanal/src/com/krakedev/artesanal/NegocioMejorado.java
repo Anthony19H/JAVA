@@ -5,10 +5,12 @@ import java.util.ArrayList;
 public class NegocioMejorado {
 
     private ArrayList<Maquina> maquinas;
-    private ArrayList<Cliente> clientes = new ArrayList<Cliente>();
+    private ArrayList<Cliente> clientes;
+    private int ultimoCodigo = 100;
 
     public NegocioMejorado() {
         this.maquinas = new ArrayList<Maquina>();
+        this.clientes = new ArrayList<Cliente>();
     }
 
     public ArrayList<Maquina> getMaquinas() {
@@ -48,12 +50,7 @@ public class NegocioMejorado {
         Maquina existente = recuperarMaquina(codigoGenerado);
 
         if (existente == null) {
-            Maquina nuevaMaquina = new Maquina();
-            nuevaMaquina.setCodigo(codigoGenerado);
-            nuevaMaquina.setNombreCerveza(nombreCerveza);
-            nuevaMaquina.setDescripcion(descripcion);
-            nuevaMaquina.setPrecioPorMl(precioPorML);
-
+            Maquina nuevaMaquina = new Maquina(nombreCerveza, descripcion, precioPorML, codigoGenerado);
             maquinas.add(nuevaMaquina);
             return true;
         } else {
@@ -72,6 +69,8 @@ public class NegocioMejorado {
         Cliente cliente = new Cliente();
         cliente.setNombre(nombre);
         cliente.setCedula(cedula);
+        cliente.setCodigo(ultimoCodigo);
+        ultimoCodigo++;
 
         clientes.add(cliente);
     }
@@ -85,10 +84,10 @@ public class NegocioMejorado {
         }
         return null;
     }
+
     public Cliente buscarClientePorCodigo(int codigo) {
         for (int i = 0; i < clientes.size(); i++) {
             Cliente c = clientes.get(i);
-           
             if (c.getCodigo() == codigo) {
                 return c;
             }
@@ -96,4 +95,31 @@ public class NegocioMejorado {
         return null;
     }
     
+    public void registrarConsumo(Cliente cliente, double valorConsumido) {
+        if (cliente != null) {
+            double nuevoTotal = cliente.getTotalConsumido() + valorConsumido;
+            cliente.setTotalConsumido(nuevoTotal);
+        }
+    }
+    
+    public boolean consumirCerveza(int codigoCliente, String codigoMaquina, int cantidad) {
+        Maquina maquina = recuperarMaquina(codigoMaquina);
+        Cliente cliente = buscarClientePorCodigo(codigoCliente);
+
+        if (maquina != null && cliente != null) {
+            double valorConsumido = maquina.servirCerveza(cantidad);
+            registrarConsumo(cliente, valorConsumido);
+            return true;
+        }
+        return false;
+    }
+    
+    public double consultarValorVendido() {
+        double totalVendido = 0;
+        for (int i = 0; i < clientes.size(); i++) {
+            Cliente c = clientes.get(i);
+            totalVendido += c.getTotalConsumido();
+        }
+        return totalVendido;
+    }
 }

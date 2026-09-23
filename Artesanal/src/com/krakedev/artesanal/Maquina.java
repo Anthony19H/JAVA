@@ -9,7 +9,6 @@ public class Maquina {
 	private double cantidadActual;
 	private String codigo;
 	
-	
 	public Maquina() {
 	}
 
@@ -20,9 +19,8 @@ public class Maquina {
 		this.descripcion = descripcion;
 		this.precioPorMl = precioPorMl;
 		this.capacidadMaxima = capacidadMaxima;
-		this.cantidadActual = 0;
-		this.codigo =codigo;
-
+		this.cantidadActual = capacidadMaxima - 200;
+		this.codigo = codigo;
 	}
 
 	public Maquina(String nombreCerveza, String descripcion, double precioPorMl, String codigo) {
@@ -31,9 +29,8 @@ public class Maquina {
 		this.descripcion = descripcion;
 		this.precioPorMl = precioPorMl;
 		this.capacidadMaxima = 10000;
-		this.cantidadActual = 0;
-		this.codigo =codigo;
-
+		this.cantidadActual = 9800;
+		this.codigo = codigo;
 	}
 
 	public String getNombreCerveza() {
@@ -71,6 +68,7 @@ public class Maquina {
 	public String getCodigo() {
 		return codigo;
 	}
+	
 	public void setCodigo(String codigo) {
 	    this.codigo = codigo;
 	}
@@ -90,13 +88,10 @@ public class Maquina {
 	}
 
 	public boolean recargarCerveza(double cantidad) {
-		double limitePermitido;
-		limitePermitido = capacidadMaxima - 200;
+		double limitePermitido = capacidadMaxima - 200;
 
 		if (cantidadActual + cantidad <= limitePermitido) {
-
 			cantidadActual = cantidadActual + cantidad;
-
 			return true;
 		} else {
 			return false;
@@ -104,16 +99,11 @@ public class Maquina {
 	}
 
 	public double servirCerveza(double cantidad) {
-
 		if (cantidadActual >= cantidad) {
 			cantidadActual = cantidadActual - cantidad;
-
-			double valor;
-			valor = cantidad * precioPorMl;
-			return valor;
+			return cantidad * precioPorMl;
 		} else {
 			return 0;
 		}
-
 	}
 }
