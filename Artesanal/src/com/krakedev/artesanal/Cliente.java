@@ -13,8 +13,10 @@ public class Cliente {
 		this.nombre = nombre;
 		this.cedula = cedula;
 	}
- 
- 
+	
+	public Cliente() {
+    }
+
  
 	public String getNombre() {
 		return nombre;

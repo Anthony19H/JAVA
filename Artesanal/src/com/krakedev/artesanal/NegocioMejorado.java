@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class NegocioMejorado {
 
     private ArrayList<Maquina> maquinas;
-    private ArrayList<Cliente> clientes;
+    private ArrayList<Cliente> clientes = new ArrayList<Cliente>();
 
     public NegocioMejorado() {
         this.maquinas = new ArrayList<Maquina>();
@@ -13,6 +13,14 @@ public class NegocioMejorado {
 
     public ArrayList<Maquina> getMaquinas() {
         return maquinas;
+    }
+    
+    public ArrayList<Cliente> getClientes() {
+        return clientes;
+    }
+    
+    public void setClientes(ArrayList<Cliente> clientes) {
+        this.clientes = clientes;
     }
 
     public void setMaquinas(ArrayList<Maquina> maquinas) {
@@ -59,4 +67,33 @@ public class NegocioMejorado {
             m.llenarMaquina();
         }
     }
+    
+    public void registrarCliente(String nombre, String cedula) {
+        Cliente cliente = new Cliente();
+        cliente.setNombre(nombre);
+        cliente.setCedula(cedula);
+
+        clientes.add(cliente);
+    }
+    
+    public Cliente buscarClientePorCedula(String cedula) {
+        for (int i = 0; i < clientes.size(); i++) {
+            Cliente c = clientes.get(i);
+            if (c.getCedula().equals(cedula)) {
+                return c;
+            }
+        }
+        return null;
+    }
+    public Cliente buscarClientePorCodigo(int codigo) {
+        for (int i = 0; i < clientes.size(); i++) {
+            Cliente c = clientes.get(i);
+           
+            if (c.getCodigo() == codigo) {
+                return c;
+            }
+        }
+        return null;
+    }
+    
 }
