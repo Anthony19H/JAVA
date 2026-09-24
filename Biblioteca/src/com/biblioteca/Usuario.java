@@ -1,79 +1,73 @@
+
 package com.biblioteca;
 
 import java.util.ArrayList;
 
 public class Usuario {
-	private String nombre;
-	private String apellido;
-	private String cedula;
-	private int idUsuario;
+    private String nombre;
+    private String apellido;
+    private String cedula;
+    private int idUsuario;
+    private ArrayList<Libro> librosPrestados;
 
-	private ArrayList<Libro> librosPrestados;
-	
-	//Constructor vacio
-	
-	public Usuario() {
-		this.librosPrestados = new ArrayList<Libro>(); 
-	} 
-	//Constructor inicializado
-	
-	public Usuario(String nombre, String apellido, String cedula, int idUsuario) {
-		this.nombre = nombre;
-		this.apellido = apellido;
-		this.cedula = cedula;
-		this.idUsuario = idUsuario;
-		this.librosPrestados = new ArrayList<Libro>();
-	}
-	
-	public ArrayList<Libro> getLibrosPrestados() {
-		return librosPrestados;
-	}
+    public Usuario() {
+        this.librosPrestados = new ArrayList();
+    }
 
-	
+    public Usuario(String nombre, String apellido, String cedula, int idUsuario) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.cedula = cedula;
+        this.idUsuario = idUsuario;
+        this.librosPrestados = new ArrayList();
+    }
 
-	public String getNombre() {
-		return nombre;
-	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-	public String getApellido() {
-		return apellido;
-	}
-	public void setApellido(String apellido) {
-		this.apellido = apellido;
-	}
-	public String getCedula() {
-		return cedula;
-	}
-	public void setCedula(String cedula) {
-		this.cedula = cedula;
-	}
-	public int getIdUsuario() {
-		return idUsuario;
-	}
-	public void setIdUsuario(int idUsuario) {
-		this.idUsuario = idUsuario;
-	}
-	
-	
-	
-	//Crear metodo SALUDAR
-	//Metodo tomar libro
-	public void tomarLibro(Libro libro) {
-		librosPrestados.add(libro);
-	}
-	//Metodo toString
-	@Override
-	public String toString() {
-		return "Usuario [nombre=" + nombre + ", apellido=" + apellido + ", cedula=" + cedula + ", idUsuario="
-				+ idUsuario + ", \n librosPrestados=" + librosPrestados + "]";
-	}
+    public ArrayList<Libro> getLibrosPrestados() {
+        return this.librosPrestados;
+    }
 
-	//Metodo devolver libro
-	public void devolverLibro(Libro libro) {
-		librosPrestados.remove(libro);
-	}
-	
-	
+    public String getNombre() {
+        return this.nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellido() {
+        return this.apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public String getCedula() {
+        return this.cedula;
+    }
+
+    public void setCedula(String cedula) {
+        this.cedula = cedula;
+    }
+
+    public int getIdUsuario() {
+        return this.idUsuario;
+    }
+
+    public void setIdUsuario(int idUsuario) {
+        this.idUsuario = idUsuario;
+    }
+
+    public void tomarLibro(Libro libro) {
+        this.librosPrestados.add(libro);
+    }
+
+    public String toString() {
+        String var10000 = this.nombre;
+        return "Usuario [nombre=" + var10000 + ", apellido=" + this.apellido + ", cedula=" + this.cedula + ", idUsuario=" + this.idUsuario + ", \n librosPrestados=" + String.valueOf(this.librosPrestados) + "]";
+    }
+
+    public void devolverLibro(Libro libro) {
+        this.librosPrestados.remove(libro);
+    }
 }

@@ -1,117 +1,134 @@
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by Fernflower decompiler)
+//
+
 package com.biblioteca;
 
 public class Libro {
-	private int id;
-	private String autor;
-	private String genero;
-	private String titulo;
-	private int anio;
-	private String isbn; 
-	private String editorial;
-	private double precio;
-	private boolean prestado;
-	
-	//Constructor vacio
-		public Libro() {
-			
-		}
-		
-	//Constructor
-	public Libro(int id, String autor, String titulo, String genero, int anio) {
-		this.id=id;
-		this.autor = autor;
-		this.titulo = titulo;
-		this.genero = genero;
-		this.anio = anio;	
-		this.prestado = false;
-	}
-	
-	//Getters and Setters
-	public String getAutor() {
-		return autor;
-	}
-	public void setAutor(String autor) {
-		this.autor = autor;
-	}
-	public String getGenero() {
-		return genero;
-	}
-	public void setGenero(String genero) {
-		this.genero = genero;
-	}
-	public String getTitulo() {
-		return titulo;
-	}
-	public void setTitulo(String titulo) {
-		this.titulo = titulo;
-	}
-	
-	public String getIsbn() {
-		return isbn;
-	}
-	public void setIsbn(String isbn) {
-		this.isbn = isbn;
-	}
-	public String getEditorial() {
-		return editorial;
-	}
-	public void setEditorial(String editorial) {
-		this.editorial = editorial;
-	}
-	public double getPrecio() {
-		return precio;
-	}
-	public void setPrecio(double precio) {
-		this.precio = precio;
-	}
-	public boolean isPrestado() {
-		return prestado;
-	}
-	public void setPrestado(boolean prestado) {
-		this.prestado = prestado;
-	}
-	public int getAnio() {
-		return anio;
-	}
-	public void setAnio(int anio) {
-		this.anio = anio;
-	}
-	//Metodo prestar
-	public void prestar() {
-		prestado = true;
-	}
-	
-	//Metodo devolver libro
-	public void devolverLibro() {
-		if(prestado == true) {
-			prestado = false;
-			System.out.println("libro devuelto");
-		}else{
-			System.out.println("libro NO se encuentra prestado");
-		}
-	}
-	
-	
-	
-	
-	
-	@Override
-	public String toString() {
-		return "Libro [id=" + id + ", autor=" + autor + ", genero=" + genero + ", titulo=" + titulo + ", anio=" + anio
-				+ ", prestado=" + prestado + "]";
-	}
+    private int id;
+    private String autor;
+    private String genero;
+    private String titulo;
+    private int anio;
+    private String isbn;
+    private String editorial;
+    private double precio;
+    private boolean prestado;
 
-	public void imprimir() {
-		System.out.println("titulo= "+titulo);
-	}
+    public Libro() {
+    }
 
-	public int getId() {
-		return id;
-	}
+    public Libro(int id, String autor, String titulo, String genero, int anio, double precio) {
+        this.id = id;
+        this.autor = autor;
+        this.titulo = titulo;
+        this.genero = genero;
+        this.anio = anio;
+        this.prestado = false;
+        this.precio = precio;
+    }
 
-	public void setId(int id) {
-		this.id = id;
-	}
-	
-	
+    public Libro(String autor, String titulo, String genero, int anio, double precio) {
+        this.autor = autor;
+        this.titulo = titulo;
+        this.genero = genero;
+        this.anio = anio;
+        this.prestado = false;
+        this.precio = precio;
+    }
+
+    public String getAutor() {
+        return this.autor;
+    }
+
+    public void setAutor(String autor) {
+        this.autor = autor;
+    }
+
+    public String getGenero() {
+        return this.genero;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+    public String getTitulo() {
+        return this.titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public String getIsbn() {
+        return this.isbn;
+    }
+
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
+    }
+
+    public String getEditorial() {
+        return this.editorial;
+    }
+
+    public void setEditorial(String editorial) {
+        this.editorial = editorial;
+    }
+
+    public double getPrecio() {
+        return this.precio;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+
+    public boolean isPrestado() {
+        return this.prestado;
+    }
+
+    public void setPrestado(boolean prestado) {
+        this.prestado = prestado;
+    }
+
+    public int getAnio() {
+        return this.anio;
+    }
+
+    public void setAnio(int anio) {
+        this.anio = anio;
+    }
+
+    public void prestar() {
+        this.prestado = true;
+    }
+
+    public void devolverLibro() {
+        if (this.prestado) {
+            this.prestado = false;
+            System.out.println("libro devuelto");
+        } else {
+            System.out.println("libro NO se encuentra prestado");
+        }
+
+    }
+
+    public void imprimir() {
+        System.out.println("titulo= " + this.titulo);
+    }
+
+    public String toString() {
+        return "Libro [id=" + this.id + ", autor=" + this.autor + ", genero=" + this.genero + ", titulo=" + this.titulo + ", anio=" + this.anio + ", prestado=" + this.prestado + "]\n";
+    }
+
+    public int getId() {
+        return this.id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }
